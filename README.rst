@@ -8,13 +8,13 @@ Installation
 ============
 
 Download or clone this project into Sublimes `Packages` Folder. On a Mac
-you can find it in `~/Library/Application Support/Sublime Text 2/Packages`.
+you can find it in ``~/Library/Application Support/Sublime Text 2/Packages``.
 
 Usage
 =====
 
-Select one or more regions in your text and run the command `dpaste`.
-Alternativly use the (default) shortcut: `Control + Alt + Super (Cmd) + D`.
+Select one or more regions in your text and run the command ``dpaste``.
+Alternativly use the (default) shortcut: ``Control + Alt + Super (Cmd) + D``.
 
 The dpaste URL gets copied to your clipboard. Watch the status bar.
 
