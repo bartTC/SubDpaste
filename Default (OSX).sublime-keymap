@@ -1,0 +1,3 @@
+[
+    { "keys": ["ctrl+alt+super+d"], "command": "dpaste" }
+]
