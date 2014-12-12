@@ -14,7 +14,7 @@ sep = """
 
 def paste_code(content):
     request = urllib2.Request(
-        'http://dpaste.de/api/',
+        'https://dpaste.de/api/',
         urllib.urlencode([('content', content)]),
     )
     response = urllib2.urlopen(request)
