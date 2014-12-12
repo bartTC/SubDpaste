@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 import urllib
 
-DPASTE_API_URL = 'http://dpaste.de/api/'
+DPASTE_API_URL = 'https://dpaste.de/api/'
 SEP = """
 
 
