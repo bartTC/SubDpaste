@@ -1,8 +1,8 @@
-import sublime, sublime_plugin
+import sublime
+import sublime_plugin
 
 import urllib
 import urllib2
-import sys
 
 sep = """
 
@@ -12,10 +12,15 @@ sep = """
 
 """
 
-def paste_code(content):
+def paste_code(content, filename):
     request = urllib2.Request(
         'https://dpaste.de/api/',
-        urllib.urlencode([('content', content)]),
+        urllib.urlencode([
+            ('content', content),
+            ('lexer', ''),
+            ('filename', filename or ''),
+            ('format', 'default'),
+        ]),
     )
     response = urllib2.urlopen(request)
     return response.read()[1:-1]
@@ -28,8 +33,9 @@ class DpasteCommand(sublime_plugin.TextCommand):
                                      or regions
         region_data = [self.view.substr(region) for region in regions]
         content = sep.join(region_data)
+        filename = self.view.file_name()
 
-        paste_url = paste_code(content)
+        paste_url = paste_code(content, filename)
 
         sublime.status_message('Pasted to %s and copied to your clipboard!' % paste_url)
         sublime.set_clipboard(paste_url)
